@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: jrbarrio/${{values.app_name}}:${{ '${{ env.COMMIT_ID }}' }}
+          tags: jorgeroldanbarrio/${{values.app_name}}:${{ '${{ env.COMMIT_ID }}' }}
     outputs:
       commit_id: ${{ '${{ env.COMMIT_ID }}' }}
 
@@ -74,7 +74,7 @@ jobs:
         run: |
 
           # Connects the argocd repo
-          repo="https://github.com/jrbarrio/${{values.app_name}}.git"
+          repo="https://github.com/jorgeroldanbarrio/${{values.app_name}}.git"
           argocd repo list | grep -q $repo || argocd repo add $repo
 
           # Creates the argocd app
